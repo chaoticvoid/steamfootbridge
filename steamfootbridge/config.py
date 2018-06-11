@@ -64,7 +64,7 @@ class Configuration:
       __wine_registry_steam_key__])
     self._wine_steam_windows_path = None
     self._wine_steam_windows_executable = None
-    with open("{}/{}".format(self._temp_directory, __wine_registry_dump_file__)) as f:
+    with open("{}/{}".format(self._temp_directory, __wine_registry_dump_file__),"r",encoding="utf_16_le") as f:
       for line in f:
         result = re.search("\"SteamExe\"=\"(.*)\"", line)
         if result:
